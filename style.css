@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
 .main__btn {
     font-size: 1.8rem;
     background: #833ab4;
@@ -233,4 +242,32 @@ nav {
 
 .nav_links ul li:hover::after {
     width: 100%;
+}
+
+@media(max-width:700px) {
+    .text-box h1 {
+        font-size: 13px;
+    }
+    .text-box p {
+        font-size: 12px;
+    }
+    nav.bi {
+        display: block;
+        color: rgb(143, 24, 24);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .services__wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services__wrapper {
+        grid-template-columns: 1fr;
+    }
 }
