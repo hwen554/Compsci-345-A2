@@ -199,6 +199,9 @@ nav {
 .nav-left{
     float: left;
 }
+.nav-center{
+    position: fixed;
+}
 
 .nav_links {
     flex: 1;

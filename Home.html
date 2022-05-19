@@ -27,13 +27,14 @@ body, html {
 
 </style>
 </head>
-<body>
+<body onload="showTime()" id="body">
 
 <!-- Navbar (sit on top) -->
 <div class="header">
     <nav>
         <div class="nav_links">
-            <div class="nav-left"><i class="fa fa-tree" style="height:70% ;"></i>Carbon Footprint</div>
+            <div class="nav-left"><i class="fa fa-tree" style="height:70% ;"></i>Carbon Footprint</div><br>
+            <div class="nav-center" id="time"></div>
             <ul>
                 <li id="home"><a href="#home">Home</a></li>
                 <li id="about"><a href="#about">About</a></li>
@@ -132,7 +133,7 @@ body, html {
 </html>
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-60">
+<footer class="w3-center w3-pale-red w3-padding-60">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -148,12 +149,20 @@ body, html {
 <script>
 
 function onClick(element) {
-  document.getElementById("img01").src = element.src;
+  document.getElementById("").src = element.src;
   document.getElementById("modal01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+function showTime() {
+            var time = document.getElementById('time');
+            time.innerHTML = Date();
+        }
 
+function clearTime() {
+            var time = document.getElementById('time');
+            time.innerHTML = '';
+        }
 
 
 
