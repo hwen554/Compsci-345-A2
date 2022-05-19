@@ -200,7 +200,7 @@ nav {
     float: left;
 }
 .nav-center{
-    position: fixed;
+    float: left;
 }
 
 .nav_links {
