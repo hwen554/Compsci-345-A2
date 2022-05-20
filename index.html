@@ -38,7 +38,7 @@ body, html {
                 <li id="home"><a href="/index.html">Home</a></li>
                 <li id="about"><a href="#about">About</a></li>
                 <li id="service"><a href="#pricing">Donation</a></li>
-                <li id="contact"><a href="/Register.html">Register</a></li>
+                
             </ul>
         </div>
 
@@ -54,7 +54,7 @@ body, html {
     <span class="w3-jumbo w3-hide-medium">Start recording your carbon footprint!</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-small">Start something that matters</span><br>
     <button class="main__btn" id="#about">Learn more</button>
-    <button class="main__btn" onclick="window.location.href='Register.html';">Register Now</button>
+    <a class="open" id="trigger-modal"><button class="main__btn" >Register Now</button></a>
   </div> 
 </header>
 
@@ -126,68 +126,46 @@ body, html {
         </div>
     </div>
 </div>
-<div class="w3-container" style="padding:120px 10px; background-color:#A2231D;" id="ct-form">
-    <h3 class="w3-center w3-large">CONTACTS</h3>
-    <p class="w3-center w3-medium">Lets get in touch</p>
-    <div style="margin-top:48px" id="userDetails">
-      
-      <form action="/action_page.php" target="_blank" id="userDetails" >
-        <div id="userDetails">
-            <label for="givenname">Given Name</label><br>
-            <input class="input1" type="text" name="given name"  placeholder="Please enter your given name"><br>
-            <label for="surname">Surname</label><br>
-            <input class="input1" type="text" name="surname"  placeholder="Please enter your surname"><br>
-            <label for="username">User Name</label><br>
-            <input class="input1" type="text" name="username"  placeholder="Please enter your username"><br>
-            <label for="username">Email</label><br>
-            <input class="input1" type="text" name="email"  placeholder="Please enter your email"><br>
-            </div>
-       </form>
-        <form id="contacts">
-            <div id="contacts">
-            <label for="mobilenumber">Phone Number</label><br>
-                <input class="input1" type="text" name="phonenumber"  placeholder="Please enter your phone number"><br>
-            
-            <label for="password">Password</label><br>
-                <input class="input1" type="text" name="password"  placeholder="Please enter your password"><br>
-            </div>
-        </form>
-        <form id="addresses">
-            <div id="addresses">
-                <label for="home">Home Address</label><br>
-                <input class="input1" type="text" name="homeaddress"  placeholder="Please enter your home address"><br>
-                <label for="work">Work Address</label><br>
-                <input class="input1" type="email" name="workaddress"  placeholder="Please enter your work address"><br>
-            </div>
-        </form>
-        <h1>Registration</h1>
-        <div id="userDetails">
-        <label for="givenname">Given Name</label><br>
-        <input class="input1" type="text" name="given name"  placeholder="Please enter your given name"><br>
-        <label for="surname">Surname</label><br>
-        <input class="input1" type="text" name="surname"  placeholder="Please enter your surname"><br>
-        <label for="username">User Name</label><br>
-        <input class="input1" type="text" name="username"  placeholder="Please enter your username"><br>
-        <label for="username">Email</label><br>
-        <input class="input1" type="text" name="email"  placeholder="Please enter your email"><br>
+
+<div class="container">
+    <div class="bg-active">
+        
+      <div class="modal-bg">
+        <div class="modal">
+
+          <button class="close-button">&times;</button>
+          <h1 class="text">Regitration</h1>
+
+          <div class="wrapper" id="ct-form">
+            <form action="" class="form">
+              <div id="userDetails">
+              <label id="userDetails" for="">
+                <input type="text" name="userDetails" placeholder="Given name" required>
+                <input type="text" name="userDetails" placeholder="Surname" required>
+                <input type="text" name="userDetails" placeholder="Username" required>
+                <input type="text" name="userDetails" placeholder="Password" required>
+              </label>
+              </div>
+              <div id="addresses">
+              <label id="addresses" for="">
+                <input type="address" name="homeAddress" placeholder="Home Address" required>
+                <input type="address" name="workAddress" placeholder="Work Address" required>
+              </label>
+              </div>
+              <div id="contacts">
+              <label id="contacts" for="">
+                <input type="number" name="phonenumber" placeholder="Phone number" required>
+                <input type="text" name="email" placeholder="Email" required>
+              </label>
+              </div>
+              <input class="button" type="submit" value="submit" name="submit">
+            </form>
+          </div>
+
         </div>
-        <div id="contacts">
-        <label for="mobilenumber">Phone Number</label><br>
-        <input class="input1" type="text" name="phonenumber"  placeholder="Please enter your phone number"><br>
-        </div>
-        <label for="password">Password</label><br>
-        <input class="input1" type="text" name="password"  placeholder="Please enter your password"><br>
-        <div id="addresses">
-        <label for="home">Home Address</label><br>
-        <input class="input1" type="text" name="homeaddress"  placeholder="Please enter your home address"><br>
-        <label for="work">Work Address</label><br>
-        <input class="input1" type="email" name="workaddress"  placeholder="Please enter your work address"><br>
-        </div>
-        <button class="button" type="button">Click To Submit</button><button class="button" type="button">Close</button>
-        </form>
-      </form>
+      </div>
     </div>
-</div>
+  </div>
 
 
 </body>
@@ -224,6 +202,41 @@ function clearTime() {
             var time = document.getElementById('time');
             time.innerHTML = '';
         }
+
+        let modalOpen = document.querySelector('.open');
+        
+let modalBg = document.querySelector('.modal-bg');
+let modalClose = document.querySelector('.close-button')
+
+modalOpen.addEventListener('click', function () {
+  modalBg.classList.add('bg-active');
+});
+
+modalClose.addEventListener('click', function () {
+  modalBg.classList.remove('bg-active');
+
+});
+
+// form data
+
+const wrapper = document.querySelector('.wrapper'),
+form = wrapper.querySelectorAll('.form'),
+submitInput = form[0].querySelector('input[type="submit"');
+
+function getDataForm(e) {
+   e.preventDefault();
+
+   let formData = new FormData(form[0]);
+    alert(formData.get ('nameField') + ' - ' + formData.get('emailField') + ' - ' + formData.get ('passwordField'))};
+   
+
+
+document.addEventListener("DOMContentLoaded", function(){
+   submitInput.addEventListener('click', getDataForm, false);
+
+}, false );
+
+
 
 
 

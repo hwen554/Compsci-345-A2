@@ -1,117 +1,156 @@
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *::after,
+    *::before {
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
 }
 
-form {
-    width: 600px;
-    margin: 100px auto 0 auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 #30475e, 0 4px 8px 0 #30475e;
-    color: #1d2ca2;
+.modal {
+  overflow: auto;
+  position: absolute;
+  top: 100px;
+  border-radius: 20px;
+  z-index: 10;
+  background-color: white;
+  width: 30%;
+  height: 50%;
 }
 
-h1 {
-    text-align: center;
+.container {
+  position: relative;
+  max-width: 1170px;
+  min-height: 2021px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #2d2d44;
 }
 
-.input1 {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    box-sizing: border-box;
-    margin: 10px 0 15px 0;
-    background-color: #30475e;
+.open {
+  float: right;
+  margin: 20px 20px;
+  background: transparent;
+  outline: none;
+  color: aliceblue;
+  font-size: 30px;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
 }
 
-.div {
-    display: inline-block;
+.open:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
-.input2 {
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    margin: 10px 0 15px 0;
-    background-color: #30475e;
+
+.modal-bg {
+  position: fixed;
+  transition: visibility 0s, 0, 5s;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.close-button {
+  margin: 10px 10px;
+  font-size: 20px;
+  float: right;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+.close-button:hover {
+  border-color: rgb(255, 2, 2);
+  color: rgb(255, 0, 0);
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.wrapper label {
+  margin: 0.5em 0;
+}
+
+.wrapper input {
+  font-size: 18px;
+  padding: 0.5em;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
 }
 
 .button {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    background-color: #30475e;
-    font-size: 15px;
-    color: greenyellow;
+  width: 100px;
 }
+  </style>
+  <title>Document</title>
+</head>
 
-@media screen and (max-width:600px) {
-    body {
-        padding: 20px;
-    }
-    form {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .div {
-        display: block;
-    }
-    .input2 {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-
-}
-
-    </style>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
 <body>
-  <div class="w3-container" style="padding:120px 10px; background-color:#A2231D;" id="trigger-modal">
-    
-    <div style="margin-top:48px" id="userDetails">
-      <form action="/action_page.php" target="_blank" id="ct-form">
-        <h1>Registration</h1>
-        <div id="userDetails">
-        <label for="givenname">Given Name</label><br>
-        <input class="input1" type="text" name="given name" id="userDetails" placeholder="Please enter your given name"><br>
-        <label for="surname">Surname</label><br>
-        <input class="input1" type="text" name="surname" id="userDetails" placeholder="Please enter your surname"><br>
-        <label for="username">User Name</label><br>
-        <input class="input1" type="text" name="username" id="userDetails" placeholder="Please enter your username"><br>
-        <label for="username">Email</label><br>
-        <input class="input1" type="text" name="email" id="userDetails" placeholder="Please enter your email"><br>
+  <div class="container">
+    <div class="bg-active">
+        
+      <div class="modal-bg">
+        <div class="modal">
+
+          <button class="close-button">&times;</button>
+          <h1 class="text">Regitration</h1>
+
+          <div class="wrapper" id="ct-form">
+            <form action="" class="form">
+              <div id="userDetails">
+              <label id="userDetails" for="">
+                <input type="text" name="userDetails" placeholder="Given name" required>
+                <input type="text" name="userDetails" placeholder="Surname" required>
+                <input type="text" name="userDetails" placeholder="Username" required>
+                <input type="text" name="userDetails" placeholder="Password" required>
+              </label>
+              </div>
+              <div id="addresses">
+              <label id="addresses" for="">
+                <input type="address" name="homeAddress" placeholder="Home Address" required>
+                <input type="address" name="workAddress" placeholder="Work Address" required>
+              </label>
+              </div>
+              <label id="passwordField" for="">
+                <input type="password" name="passwordField" placeholder="password" required>
+              </label>
+              <input class="button" type="submit" value="submit" name="submit">
+            </form>
+          </div>
+
         </div>
-        <div id="contacts">
-        <label for="mobilenumber">Phone Number</label><br>
-        <input class="input1" type="text" name="phonenumber" id="contacts" placeholder="Please enter your phone number"><br>
-        </div>
-        <label for="password">Password</label><br>
-        <input class="input1" type="text" name="password" id="userDetails" placeholder="Please enter your password"><br>
-        <div id="addresses">
-        <label for="home">Home Address</label><br>
-        <input class="input1" type="text" name="homeaddress" id="addresses" placeholder="Please enter your home address"><br>
-        <label for="work">Work Address</label><br>
-        <input class="input1" type="email" name="workaddress" id="addresses" placeholder="Please enter your work address"><br>
-        </div>
-        <button class="button" type="button">Click To Submit</button><button class="button" type="button">Close</button>
-      </form>
+      </div>
     </div>
   </div>
-
+  <script src="/index.js"></script>
 </body>
+
 </html>

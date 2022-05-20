@@ -273,64 +273,106 @@ nav {
 }
 
 
-form {
-    width: 600px;
-    margin: 100px auto 0 auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 #30475e, 0 4px 8px 0 #30475e;
-    color: #1d3ea2;
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-h1 {
-    text-align: center;
+.modal {
+  overflow: auto;
+  position: absolute;
+  top: 100px;
+  border-radius: 20px;
+  z-index: 10;
+  background-color: white;
+  width: 30%;
+  height: 50%;
 }
 
-.input1 {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    box-sizing: border-box;
-    margin: 10px 0 15px 0;
-    background-color: #30475e;
+.container {
+  position: relative;
+  width: 0px;
+  height: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #2d2d44;
 }
 
-.div {
-    display: inline-block;
+.open {
+  float:inherit;
+  margin: 20px 20px;
+  background: transparent;
+  outline: none;
+  color: aliceblue;
+  font-size: 30px;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
 }
 
-.input2 {
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    margin: 10px 0 15px 0;
-    background-color: #30475e;
+.open:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+
+.modal-bg {
+  position: fixed;
+  transition: visibility 0s, 0, 5s;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.close-button {
+  margin: 10px 10px;
+  font-size: 20px;
+  float: right;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+.close-button:hover {
+  border-color: rgb(255, 2, 2);
+  color: rgb(255, 0, 0);
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.wrapper label {
+  margin: 0.5em 0;
+}
+
+.wrapper input {
+  font-size: 18px;
+  padding: 0.5em;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
 }
 
 .button {
-    width: 50%;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    background-color: #30475e;
-    font-size: 15px;
-    color: greenyellow;
-}
-
-@media screen and (max-width:600px) {
-    body {
-        padding: 20px;
-    }
-    form {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .div {
-        display: block;
-    }
-    .input2 {
-        width: 100%;
-        box-sizing: border-box;
-    }
+  width: 100px;
 }
 
