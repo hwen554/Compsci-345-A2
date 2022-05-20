@@ -126,11 +126,14 @@ body, html {
         </div>
     </div>
 </div>
-<div class="w3-container" style="padding:120px 10px; background-color:#A2231D;" id="trigger-modal">
+<div class="w3-container" style="padding:120px 10px; background-color:#A2231D;" id="ct-form">
     <h3 class="w3-center w3-large">CONTACTS</h3>
     <p class="w3-center w3-medium">Lets get in touch</p>
     <div style="margin-top:48px" id="userDetails">
-      <form action="/action_page.php" target="_blank" id="ct-form">
+      
+      <form action="/action_page.php" target="_blank" id="userDetails" >
+        <form id="contacts">
+        <form id="addresses">
         <h1>Registration</h1>
         <div id="userDetails">
         <label for="givenname">Given Name</label><br>
@@ -155,9 +158,11 @@ body, html {
         <input class="input1" type="email" name="workaddress" id="addresses" placeholder="Please enter your work address"><br>
         </div>
         <button class="button" type="button">Click To Submit</button><button class="button" type="button">Close</button>
+        </form>
+        </form>
       </form>
     </div>
-  </div>
+</div>
 
 
 </body>
