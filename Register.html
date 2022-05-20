@@ -156,11 +156,11 @@ form .user-details .input-box{
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-  <div class="container">
+  <div class="container"  id="trigger-modal">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
-        <div class="user-details">
+      <form action="#" id="ct-form">
+        <div class="user-details" id="userDetails">
           <div class="input-box">
             <span class="details">Given Name</span>
             <input type="text" placeholder="Enter your name" required>
@@ -173,7 +173,7 @@ form .user-details .input-box{
             <span class="details">User Name</span>
             <input type="text" placeholder="Enter your email" required>
           </div>
-          <div class="input-box">
+          <div class="input-box" id="contacts">
             <span class="details">Phone Number</span>
             <input type="text" placeholder="Enter your number" required>
           </div>
@@ -181,7 +181,7 @@ form .user-details .input-box{
             <span class="details">Password</span>
             <input type="text" placeholder="Enter your password" required>
           </div>
-          <div class="input-box">
+          <div class="input-box" id="address">
             <span class="details">Home Address</span>
             <input type="text" placeholder="Enter your password" required>
           </div>
