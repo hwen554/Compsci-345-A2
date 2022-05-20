@@ -33,7 +33,7 @@ body, html {
 <div class="header">
     <nav>
         <div class="nav_links">
-            <div class="nav-left"><i class="fa fa-tree" style="height:70% ;"></i>Carbon Footprint</div>
+            <div class="nav-left" id="trigger-modal"><i class="fa fa-tree" style="height:70% ;"></i>Carbon Footprint</div>
             <ul>
                 <li id="home"><a href="/index.html">Home</a></li>
                 <li id="about"><a href="#about">About</a></li>
@@ -54,7 +54,7 @@ body, html {
     <span class="w3-jumbo w3-hide-medium">Start recording your carbon footprint!</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-small">Start something that matters</span><br>
     <button class="main__btn" id="#about">Learn more</button>
-    <button class="main__btn"id="trigger-modal" onclick="window.location.href='Register.html';">Register Now</button>
+    <button class="main__btn" onclick="window.location.href='Register.html';">Register Now</button>
   </div> 
 </header>
 
@@ -126,6 +126,38 @@ body, html {
         </div>
     </div>
 </div>
+<div class="w3-container" style="padding:120px 10px; background-color:#A2231D;" id="trigger-modal">
+    <h3 class="w3-center w3-large">CONTACTS</h3>
+    <p class="w3-center w3-medium">Lets get in touch</p>
+    <div style="margin-top:48px" id="userDetails">
+      <form action="/action_page.php" target="_blank" id="ct-form">
+        <h1>Registration</h1>
+        <div id="userDetails">
+        <label for="givenname">Given Name</label><br>
+        <input class="input1" type="text" name="given name" id="userDetails" placeholder="Please enter your given name"><br>
+        <label for="surname">Surname</label><br>
+        <input class="input1" type="text" name="surname" id="userDetails" placeholder="Please enter your surname"><br>
+        <label for="username">User Name</label><br>
+        <input class="input1" type="text" name="username" id="userDetails" placeholder="Please enter your username"><br>
+        <label for="username">Email</label><br>
+        <input class="input1" type="text" name="email" id="userDetails" placeholder="Please enter your email"><br>
+        </div>
+        <div id="contacts">
+        <label for="mobilenumber">Phone Number</label><br>
+        <input class="input1" type="text" name="phonenumber" id="contacts" placeholder="Please enter your phone number"><br>
+        </div>
+        <label for="password">Password</label><br>
+        <input class="input1" type="text" name="password" id="userDetails" placeholder="Please enter your password"><br>
+        <div id="addresses">
+        <label for="home">Home Address</label><br>
+        <input class="input1" type="text" name="homeaddress" id="addresses" placeholder="Please enter your home address"><br>
+        <label for="work">Work Address</label><br>
+        <input class="input1" type="email" name="workaddress" id="addresses" placeholder="Please enter your work address"><br>
+        </div>
+        <button class="button" type="button">Click To Submit</button><button class="button" type="button">Close</button>
+      </form>
+    </div>
+  </div>
 
 
 </body>

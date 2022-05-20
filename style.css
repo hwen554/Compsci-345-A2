@@ -271,3 +271,66 @@ nav {
         grid-template-columns: 1fr;
     }
 }
+
+
+form {
+    width: 600px;
+    margin: 100px auto 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 #30475e, 0 4px 8px 0 #30475e;
+    color: #1d3ea2;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input1 {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: 10px 0 15px 0;
+    background-color: #30475e;
+}
+
+.div {
+    display: inline-block;
+}
+
+.input2 {
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    margin: 10px 0 15px 0;
+    background-color: #30475e;
+}
+
+.button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #30475e;
+    font-size: 15px;
+    color: greenyellow;
+}
+
+@media screen and (max-width:600px) {
+    body {
+        padding: 20px;
+    }
+    form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .div {
+        display: block;
+    }
+    .input2 {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
