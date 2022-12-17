@@ -1,7 +1,7 @@
 # Compsci-345-A2
 ###     The Report
 I imagined a scenario where the user would need to see the sign-up button clearly in one interaction, and the sign-up function would be able to quickly navigate the sign-up page. Therefore, our high-fidelity prototype focuses on the following user needs:
-.
+
 1. Ability to click.
 2. Ability to direct user to register page.
 3. Ability to see different input in registration form
